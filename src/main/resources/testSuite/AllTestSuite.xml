@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AllTestSuite" verbose="1" >
+<test name="ParentChildResgistration" >
+    <classes>
+        <class name="tests.ParentRegistrationTest" />
+    </classes>
+</test>
+</suite>
+

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="DataSetupSuite" verbose="1" >
+    <test name="QRCodeGeneration" >
+        <classes>
+            <class name="tests.ImmTest" />
+        </classes>
+    </test>
+</suite>
