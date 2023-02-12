@@ -5,10 +5,10 @@ import utils.imwebUI;
 
 
 public class advertisementPage {
-    String TxtModel = "//td[contains(text(),'Swift')]";
-    String TxtManufacture = "//td[contains(text(),'Suzuki')]";
-    String TxtTransmission = "//td[contains(text(),'Manual')]";
-    String TxtManufactureYear = "//td[contains(text(),'2011')]";
+    String TxtModel = "//table[@class='course-info table table-striped']/tbody/tr[6]/td[2]";
+    String TxtManufacture = "//table[@class='course-info table table-striped']/tbody/tr[5]/td[2]";
+    String TxtTransmission = "//table[@class='course-info table table-striped']/tbody/tr[4]/td[2]";
+    String TxtManufactureYear = "//table[@class='course-info table table-striped']/tbody/tr[2]/td[2]";
 
 
     public String getManufacture(){
