@@ -13,55 +13,47 @@ public class HomePage {
 
     WebDriver driver;
     WebDriverWait wait;
-    private String expectedTitleHomePage = "Home";
+    private String expectedTitleHomePage = "Swag Labs";
 
-    private String actualTitleHomePage = "//a[@class='nav-link Header_active__gnzlZ'][contains(.,'Home')]";
+    private String actualTitleHomePage = "//div[@id='']";
 
     private String BtnLoginIn = "//header/div[1]/section[1]/div[2]/div[3]/span[1]/a[2]";
-    private String BtnVehicle = "//h3[contains(text(),'Vehicles')]";
-    private String BtnCar = "//body/div[@id='app']/div[2]/section[1]/div[1]/div[1]/div[1]/div[1]/span[1]/a[1]/*[1]";
+    private String BtnAddCart = "//button[@id='add-to-cart-sauce-labs-backpack']";
+    private String BtnProductName = "//a[@id='item_4_title_link']";
+    private String BtnProduct2Name = "//a[@id='item_1_title_link']";
+    private String BtnCart = "//body/div[@id='root']/div[@id='page_wrapper']/div[@id='contents_wrapper']/div[@id='header_container']/div[1]/div[3]/a[1]";
+
+
+
 
     public HomePage(){
+
+
+    }
+    public String getActualTitleHomePage(){
+        imwebUI.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(actualTitleHomePage)));
+        return imwebUI.driver.findElement(By.xpath(actualTitleHomePage)).getText();
+
     }
 
-    public WebDriver loadHomePage(String url, String login) throws Exception {
+    public WebDriver navigateToFirstProduct() {
 
-
-        if(login.equals("Pat_Pat")) {
-
-            driver = DriverUtil.getChromeDriver("https://" + Constant.userName + ":" + Constant.Password + "@" + Constant.baseUrl);
-//            Thread.sleep(3000);
-
-        }
-//
-        if(login.equals("imm")){
-//            driver = DriverUtil.getChromeDriverForDownload(url);
-        }
-
-        wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BtnVehicle)));
-        imwebUI.setDriver(driver);
-        imwebUI.setWait(wait);
-
+        imwebUI.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BtnProductName)));
+        imwebUI.driver.findElement(By.xpath(BtnProductName)).click();
         return driver;
     }
+    public WebDriver navigateToCart() {
 
-
-    public WebDriver navigateToVehicle() {
-
-        imwebUI.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BtnVehicle)));
-        imwebUI.driver.findElement(By.xpath(BtnVehicle)).click();
+        imwebUI.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BtnCart)));
+        imwebUI.driver.findElement(By.xpath(BtnCart)).click();
         return driver;
     }
-    public WebDriver navigateToCar(){
+    public WebDriver navigateToSecondProduct() {
 
-        imwebUI.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BtnCar)));
-        imwebUI.driver.findElement(By.xpath(BtnCar)).click();
+        imwebUI.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BtnProduct2Name)));
+        imwebUI.driver.findElement(By.xpath(BtnProduct2Name)).click();
         return driver;
-
     }
-
-
     public String getExpectedTitleHomePage(){
         return expectedTitleHomePage;
     }

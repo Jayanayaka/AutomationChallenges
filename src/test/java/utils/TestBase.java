@@ -2,6 +2,7 @@ package utils;
 
 import functions.Home;
 //import functions.Login;
+import functions.Login;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -19,7 +20,7 @@ public class TestBase {
 
     @BeforeMethod
     public void initBaseClass() throws Exception {
-        Home.loadHomePage("Pat_Pat");
+        Login.loadLoginPage("Swag_Lab");
 //        Assert.assertEquals(Home.getActTitle(), Home.getExpTitle());
 //        Assert.assertEquals(Home.actualTitle(), Home.expectedTitle());
 

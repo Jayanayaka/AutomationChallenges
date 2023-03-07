@@ -66,9 +66,9 @@
                 <version>2.22.0</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <baseUrl>www.patpat.lk</baseUrl>
-                        <userName>admin</userName>
-                        <Password>MyPass312</Password>
+                        <baseUrl>www.saucedemo.com</baseUrl>
+                        <userName>performance_glitch_user</userName>
+                        <Password>secret_sauce</Password>
 
                      </systemPropertyVariables>
                     <suiteXmlFiles>

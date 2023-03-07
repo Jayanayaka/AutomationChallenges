@@ -5,6 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,20 +29,15 @@ public class DriverUtil {
         options.setExperimentalOption("prefs", prefs);
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-//        options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
 //        options.addArguments("--headless");
-
-
         driver= new ChromeDriver(options);
-//        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
 //        driver.manage().window().maximize();
         driver.manage().window().setSize(new Dimension(1900, 1100));
         driver.get(url);
 
 
-        return driver;
-
-    }
+        return driver;    }
 
 //    public static WebDriver getChromeDriverForDownload(String url) throws IOException {
 //
